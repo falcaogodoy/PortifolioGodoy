@@ -1,8 +1,7 @@
 # Projetos do Portifolio :
 
-Pokedex:
+Pokedex: 
 
-Primeiro projeto para portifolio, esse projeto visa praticar o uso dos processos e teconologia com API externa.
 
 Tecnologias Utilizadas :
 JavaScript
