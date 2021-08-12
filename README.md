@@ -1,6 +1,10 @@
 Projetos do Portifolio :
   * Pokedex
+
+
       Tecnologias utilizadas:
+      
+      
         - React.Js
         - JavaScript
         - Html
