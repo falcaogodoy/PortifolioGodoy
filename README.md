@@ -30,18 +30,20 @@ Link : http://first-fog.surge.sh
         - GIT
         - API Pkemon
  
-   * PobreFy
+
+  * PobreFy
 
 
       Tecnologias utilizadas:
       
       
         - React.Js
+        - Hooks
         - JavaScript
         - Html
         - CSS
         - GIT
-        - API Spotify
+        - API Astro
 
 Link : http://guttural-sweater.surge.sh/
         
