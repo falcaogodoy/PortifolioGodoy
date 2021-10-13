@@ -1,52 +1,62 @@
 
-import React from "react"; 
+import React, { useEffect, useState } from "react"; 
 import { Button, TextField,  } from "@material-ui/core";
 import { CreatApppForm } from "./style";
 import PageTitle from "../../components/PageTitle";
 import { InputLabel, MenuItem, Select } from "@mui/material";
-
+import axios from "axios";
+import { useForm } from "../../hooks/useForm";
 
 const ApplicationPage = () =>{
-    const trips =  [
-        {
-            "id": "EbLG4OmoQVNUx0ufPVrs",
-            "description": "Nenhum surfista intergalático pode ficar fora dessa!",
-            "planet": "Netuno",
-            "name": "Surfando em Netuno",
-            "date": "21/12/20",
-            "durationInDays": 540
-        },
-        {
-            "id": "dlDYZdkza8336GvRh8U4",
-            "planet": "Jupiter",
-            "name": "Multi luau em Jupiter",
-            "description": "Noite mágica, com vista para as 69 luas de Jupiter",
-            "durationInDays": 540,
-            "date": "21/12/20"
-        }, 
-    ]
+    const [trips, setTrips] = useState([])
+    const [form, onChangeInput] = useForm({
+        name:'',
+        age:0,
+        applicationText: '',
+        profession:'',
+        contry:'',
+        trip: null,
+    })
+   
+    useEffect(() =>{
+        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/francisco/trips').then((response) =>{
+            setTrips(response.data.trips)
+        })
+    }, [])
+   const onSubmitApplication = (event) =>{
+        event.preventDefault()
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: form.contry,
+        }
+   }
 
     return <div>
       <PageTitle title={'Incricao De pessoa'}/>
         
         <CreatApppForm>
-            <TextField label={'Name'} />
-            <TextField label={'idade'} type={'number'}/>
+            <TextField label={'Name'} onChange={onChangeInput} name={'name'} value={form['name']}/>
+            <TextField label={'idade'} type={'number'} onChange={onChangeInput} name={'age'} value={form['age']}/>
             <TextField label={'texto de aplicacao'} 
                  type={'text'}  
                  helperText="Some important text" 
                  multiline
                  rows={4}
                  defaultValue="Descreva sua motivacao"
+                 onChange={onChangeInput} name={'applicationText'} value={form['applicationText']}
                  />         
-            <TextField label={'profissao'} />   
+            <TextField label={'profissao'} onChange={onChangeInput} name={'profession'} value={form['profession']}/>   
             <InputLabel id="select-paises">Pais</InputLabel>
                  <Select
                     labelId="select-paises"
                     id="select-paises"
                     // value={"age"}
                     // onChange={handleChange}
-                    label="Age"
+                    label="country"
+                    onChange={onChangeInput} name={'country'} value={form['country']}
                     >
                     <MenuItem value="">
                         <em>None</em>
@@ -61,7 +71,7 @@ const ApplicationPage = () =>{
                     id="select-viagens"
                     // value={"age"}
                     // onChange={handleChange}
-                   
+                    onChange={onChangeInput} name={'trip'} value={form['trip']}
                     >
                         {trips.map((trips)=>{
                             return  <MenuItem value={trips}>{trips.name}</MenuItem> 
