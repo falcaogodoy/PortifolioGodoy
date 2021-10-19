@@ -6,13 +6,13 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RecipeDetailPage from "../pages/RecipeDetailPage/RecipeDetailPage";
 import RecipeListPage from "../pages/RecipesListPage/RecipesListPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
-
-
+import ButtonAppBar from "../components/Header/Header"
 
 const Router = () => {
 
     return(
-        <BrowserRouter>        
+        <BrowserRouter>   
+            <ButtonAppBar/>
             <Switch>
                 <Route exact path="/login" >
                     <LoginPage />
