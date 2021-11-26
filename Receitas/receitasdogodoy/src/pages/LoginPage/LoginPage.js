@@ -4,15 +4,17 @@ import logo_transparante from "../../assets/logo_transparent.png";
 import LoginForm from "./LoginForm"
 import { Button} from "@material-ui/core";
 import {useHistory} from 'react-router-dom';
-import {goToSignUp} from "../../routes/coordinator"
+import {goToSignUp} from "../../routes/coordinator";
+import useUnProt from "../../hooks/useUnprot";
 
-const LoginPage = () => { 
+
+const LoginPage = ({setRightButtonText}) => { 
     const history = useHistory()
-
+    useUnProt()
     return (
         <ScreenContainer>
           <LogoImage src={logo_transparante}/>
-            <LoginForm/>            
+            <LoginForm setRightButtonText={setRightButtonText}/>            
 
         <SignUpButtonContainer>
             <Button 
