@@ -1,10 +1,19 @@
 import React from "react";
+import useProtec from "../../hooks/useProtec";
+import { RecipeContainer, ScreenContainer } from './styled'
+import AddRecipeForm from './AddRecipesForm'
+import Typography from '@material-ui/core/Typography'
+
 
 const AddRecipesPage = () => {
+    useProtec()
     return (
-        <div>
-            <h1> AddRecipesPage</h1>
-        </div>
+        <ScreenContainer>
+        <RecipeContainer>
+          <Typography gutterBottom variant={'h4'} align={'center'} color={'textPrimary'}>Adicionar Nova Receita</Typography>
+          <AddRecipeForm/>
+        </RecipeContainer>
+      </ScreenContainer>
     )
 }
 
