@@ -1,2 +1,7 @@
-package entities;public enum WorkerLevel {
+package entities;
+
+public enum WorkerLevel {
+    JUNIOR,
+    MID_LEVEL,
+    SENIOR,
 }
