@@ -69,7 +69,7 @@ public class Worker {
         contracts.remove(contract);
     }
 
-    public Double income(int year, int month){
+    public double income(int year, int month){
       double soma = baseSalary;
         Calendar cal = Calendar.getInstance();
 
@@ -77,12 +77,12 @@ public class Worker {
           cal.setTime(c.getDate());
 
           int c_year = cal.get(Calendar.YEAR);
-          int c_month = cal.get(Calendar.MONTH);
+          int c_month = 1 +  cal.get(Calendar.MONTH);
         if(year == c_year && month == c_month){
             soma += c.totalValue();
         }
       }
-
+        return soma;
 
     }
 
