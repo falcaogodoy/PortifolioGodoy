@@ -57,11 +57,12 @@ public class Program {
         System.out.println();
         System.out.print(" Entre com o mes e ano para calcular a Renda.");
         String mesAno  = sc.next();
-        int mes = Integer.parseInt(mesAno.substring(0, 2));
         int ano = Integer.parseInt(mesAno.substring(3));
+        int mes = Integer.parseInt(mesAno.substring(0, 2));
+
         System.out.println("Nome : " + worker.getName());
         System.out.println("Departamento : " + worker.getDepartament().getName());
-        System.out.println(" Renda de " + mesAno + "   " + String.format("%.2f", worker.income(mes, ano)));
+        System.out.println(" Renda de " + mesAno + "  :  " + String.format("%.2f", worker.income(ano, mes)));
 
 
 

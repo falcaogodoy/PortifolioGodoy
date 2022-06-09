@@ -62,8 +62,8 @@ public class Worker {
 
     // Metodos //
 
-    public void addContract(HourContract contract){
-        contracts.add(contract);
+    public void addContract(HourContract contracts){
+        this.contracts.add(contracts);
     }
     public void removeCotract(HourContract contract){
         contracts.remove(contract);
@@ -78,6 +78,7 @@ public class Worker {
 
           int c_year = cal.get(Calendar.YEAR);
           int c_month = 1 +  cal.get(Calendar.MONTH);
+
         if(year == c_year && month == c_month){
             soma += c.totalValue();
         }
