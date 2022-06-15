@@ -70,15 +70,16 @@ public class Order {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Pedido instante : ");
-        sb.append(sdf.format(moment) + "/n");
+        sb.append(sdf.format(moment) + "\n");
         sb.append("Status do Pedido : ");
-        sb.append(status + "/n");
+        sb.append(status + "\n");
         sb.append("Cliente : ");
-        sb.append(client + "/n");
-        sb.append("Itens do Pedido");
+        sb.append(client + "\n");
+        sb.append("Itens do Pedido : \n");
         for (OrderItem item : items){
-            sb.append(item + "/n");
+            sb.append(item + "\n");
         }
+        sb.append("  ");
         sb.append("Preco total : ");
         sb.append(String.format("%2f",total()));
         return sb.toString();
