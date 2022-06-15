@@ -12,6 +12,7 @@ public class Product {
         this.price = price;
     }
 
+
     public String getNome() {
         return nome;
     }
