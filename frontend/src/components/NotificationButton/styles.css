@@ -1,0 +1,17 @@
+
+
+.btn-red {
+    background: rgba(255, 107, 114, 0.1);
+    border: 1px solid #ff6b72;
+    border-radius: 10px; 
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+  }
+  .btn-red img {
+      width: 19px;
+  }
