@@ -1,0 +1,5 @@
+package com.godoy.dsmeta.entities;
+
+public class Sale {
+
+}

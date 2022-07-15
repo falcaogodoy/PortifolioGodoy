@@ -1,0 +1,5 @@
+package com.godoy.dsmeta.controllers;
+
+public class SaleController {
+
+}

@@ -1,0 +1,5 @@
+package com.godoy.dsmeta.config;
+
+public class SecurityConfig {
+
+}
